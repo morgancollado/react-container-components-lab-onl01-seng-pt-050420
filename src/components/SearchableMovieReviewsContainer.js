@@ -19,7 +19,8 @@ export default class SearchableMovieReviewsContainer extends Component {
     
     handleSubmit= (e) => {
         e.preventDefault()
-        fetch(URL.concat(this.state.searchTerm))
+        debugger
+        fetch(URL.concat('', this.state.searchTerm))
         .then(r => r.json())
         .then(reviews => this.setState({ reviews: reviews.results}))
         
@@ -28,9 +29,9 @@ export default class SearchableMovieReviewsContainer extends Component {
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <input type="text" onChange={e => this.setState({ searchTerm: e.target.value})}></input>
-                    <input type="submit" onSubmit={this.handleSubmit}></input>
+                    <input type="submit"></input>
                 </form>
                 <h3>Searched Movies</h3>
 
