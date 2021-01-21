@@ -25,7 +25,7 @@ export default class LatestMovieReviewsContainer extends Component {
     }
 
     componentDidMount() {
-        this.fetchData
+        this.fetchData()
     }
    
     render() {
